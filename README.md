@@ -14,7 +14,7 @@ within the key's limit of 1000 requests per hour.
   a collection is first checked with `/collections/<id>` and trusted for 6 hours. Only public
   collections are supported.
 
-The extension rotates through a deck on its own (on every tab, every minute…) and asks for the
+The extension rotates through a deck on its own (on every tab, every hour…) and asks for the
 next one when it runs low.
 
 ## Running
