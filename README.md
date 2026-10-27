@@ -19,9 +19,11 @@ next one when it runs low.
 
 ## Running
 
-Node 24 runs the TypeScript sources directly, there is no build step.
+Node 24 runs the TypeScript sources directly, there is no build step. Node and pnpm versions
+are pinned in `mise.toml` and `mise.lock`; CI and the Docker image install them from there.
 
 ```bash
+mise install           # node and pnpm
 cp .env.example .env   # set UNSPLASH_ACCESS_KEY and CURATED_COLLECTION_ID
 pnpm install
 pnpm dev               # restarts on changes
