@@ -1,6 +1,6 @@
 # kMarkTab backend
 
-A small proxy between the kMarkTab extension and Unsplash. It keeps the Unsplash key on
+A small proxy between the [kMarkTab extension](https://github.com/itsTPM/kMarkTab) and Unsplash. It keeps the Unsplash key on
 the server instead of in the extension, and caches responses so all users together stay
 within the key's limit of 1000 requests per hour.
 
