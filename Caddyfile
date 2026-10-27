@@ -1,0 +1,4 @@
+# DOMAIN comes from .env
+{$DOMAIN} {
+	reverse_proxy app:3000
+}
