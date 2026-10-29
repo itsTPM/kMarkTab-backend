@@ -59,7 +59,9 @@ docker compose up -d
 
 ## API
 
-All responses are JSON with `Cache-Control: no-store` and `Access-Control-Allow-Origin: *`.
+All responses are JSON with `Cache-Control: no-store` and `Access-Control-Allow-Origin: *`
+(`Retry-After` exposed): the extension has no host permission for the backend, so it reads the
+responses through CORS.
 
 |                           |                                                                                                                        |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------- |

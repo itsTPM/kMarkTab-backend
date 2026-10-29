@@ -133,6 +133,8 @@ describe("GET /v1/collections/:id", () => {
     const res = await app.request("/v1/collections/c10", { headers: INSTALL });
     expect(res.status).toBe(429);
     expect(res.headers.get("Retry-After")).toBe(String(24 * 60 * 60));
+    // the extension reads it through CORS
+    expect(res.headers.get("Access-Control-Expose-Headers")).toContain("Retry-After");
   });
 
   it("checks the collection once before its decks", async () => {

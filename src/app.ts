@@ -22,9 +22,16 @@ export function createApp(deps: {
   const { decks, curated, limits, budget, log, clientIp } = deps;
   const app = new Hono();
 
-  // No cookies or auth headers, so any origin may read the responses
+  // No cookies or auth headers, so any origin may read the responses. The extension relies on
+  // it: it has no host permission for the backend. Retry-After isn't readable by default.
   app.use(
-    cors({ origin: "*", allowMethods: ["GET"], allowHeaders: ["X-Install-Id"], maxAge: 86400 }),
+    cors({
+      origin: "*",
+      allowMethods: ["GET"],
+      allowHeaders: ["X-Install-Id"],
+      exposeHeaders: ["Retry-After"],
+      maxAge: 86400,
+    }),
   );
 
   app.use(async (c, next) => {
